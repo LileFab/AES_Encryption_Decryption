@@ -1,4 +1,5 @@
 # Compte Rendu - Implémentation AES
+![image](https://github.com/LileFab/AES_Encryption_Decryption/assets/98893025/e6d2faf0-ea90-43b1-b3b4-05745c4f293c)
 
 ## 1. Entrée et Matrice d'État Initial
 - `input_str` représente la chaîne d'entrée initiale au format hexadécimal.
