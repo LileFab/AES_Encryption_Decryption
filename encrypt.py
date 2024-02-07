@@ -15,16 +15,18 @@ s_box = [
     "BA", "78", "25", "2E", "1C", "A6", "B4", "C6", "E8", "DD", "74", "1F", "4B", "BD", "8B", "8A",
     "70", "3E", "B5", "66", "48", "03", "F6", "0E", "61", "35", "57", "B9", "86", "C1", "1D", "9E",
     "E1", "F8", "98", "11", "69", "D9", "8E", "94", "9B", "1E", "87", "E9", "CE", "55", "28", "DF",
-    "8C", "A1", "89", "0D", "BF", "E6", "42", "68", "41", "99", "2D", "0F", "B0", "54", "BB", "16"
-]
+    "8C", "A1", "89", "0D", "BF", "E6", "42", "68", "41", "99", "2D", "0F", "B0", "54", "BB", "16"]
 mixColKey = [[0b10, 0b11, 0b01, 0b01], [0b01, 0b10, 0b11, 0b01], [0b01, 0b01, 0b10, 0b11], [0b11, 0b01, 0b01, 0b10]]
 
 def main():
   state = input_str.lower()
   state = toMatrice(state)
+  print("Matrice d'entrée")
+  printPropre(state)
   state = subBytes(state)
   state = shiftRows(state)
   state = mixColumns(state)
+  print("Matrice de sortie")
   printPropre(state)
 
 def printPropre(input):
@@ -83,20 +85,37 @@ def shiftRows(input):
   return output
 
 def mixColumns(input):
-  output = [[0]*4 for _ in range(4)]
-  temp = [[0]*4 for _ in range(4)]
-  tempIn = [[0]*4 for _ in range(4)]
-  tempKey = [[0]*4 for _ in range(4)]
+  output = [[0] * 4 for _ in range(4)]
+  output_hex = [[0] * 4 for _ in range(4)]
+
+  for col in range(4):
+      for row in range(4):
+          output[row][col] = multiply(input[0][col], mixColKey[row][0]) ^ \
+                              multiply(input[1][col], mixColKey[row][1]) ^ \
+                              multiply(input[2][col], mixColKey[row][2]) ^ \
+                              multiply(input[3][col], mixColKey[row][3])
+          
   for i in range(4):
     for z in range(4):
-      for t in range(4):
-        tempIn[t][z] = input[i][z]
-        tempKey[z][t] = mixColKey[z][t]
-        temp[z][t] = (bin(int(str(tempIn[z][t]), 16)) * mixColKey[z][t]).replace("0b", "").zfill(8)
-    printPropre(tempIn)
-    printPropre(tempKey)
-    printPropre(temp)
-  return output
+      output_hex[i][z] = hex(output[i][z])[-2:]
+
+  return(output_hex)
+
+
+def multiply(a, b):
+    a = int(a, 16)
+    result = 0
+
+    for _ in range(8):
+        if b & 1:
+            result ^= a
+        a <<= 1
+        if a & 0x100:
+            a ^= 0x1B
+        b >>= 1
+
+    return result
+
 
 s_box_16x16 = [s_box[i:i+16] for i in range(0, len(s_box), 16)]
 main()
