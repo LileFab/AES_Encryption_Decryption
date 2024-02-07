@@ -23,11 +23,11 @@
 - `toMatrice` organise la chaîne hexadécimale en une matrice 4x4.
 - `multiply` réalise la multiplication dans le champ de Galois fini.
 
-# Affichage résultat
-![image](https://github.com/LileFab/AES_Encryption_Decryption/assets/98893025/e6d2faf0-ea90-43b1-b3b4-05745c4f293c)
-
 ## 6. Fonction Principale (Main)
 - La fonction `main` est la fonction principale qui appelle successivement les étapes de SubBytes, ShiftRows et MixColumns.
 - Le résultat final est affiché à l'aide de la fonction `printPropre`.
 
 L'ensemble du code représente l'implémentation d'une ronde (round) de l'algorithme AES (Advanced Encryption Standard) pour une clé de 128 bits. Chaque étape (SubBytes, ShiftRows, MixColumns) contribue à la confusion et à la diffusion des données pour renforcer la sécurité de l'algorithme.
+
+# Affichage résultat
+![image](https://github.com/LileFab/AES_Encryption_Decryption/assets/98893025/e6d2faf0-ea90-43b1-b3b4-05745c4f293c)
