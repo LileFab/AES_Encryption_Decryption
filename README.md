@@ -122,10 +122,12 @@ Donc la première ligne de la matrice ne sera pas décalé, la 2ème de 1, la 3�
 
 Cette partie du code se découpe en 4 partie distinguable en 2 fonctions :  
 
-Fonction principale : 
+Fonction principale :  
+
 ![alt text](image-10.png)  
 
-Fonction réalisant le multiplication des termes :   
+Fonction réalisant le multiplication des termes :  
+ 
 ![alt text](image-11.png)
 
 
