@@ -104,8 +104,8 @@ Dans cette fonction je transforme le string en matrice afin de faciliter les op�
 ![alt text](image-6.png)  
 Dans cette fonction l'objectif est de substituer chaque octet du mot en entrée par un autre octet en fonction d'une table de correspondance qui est dans le code Python la `s_box`.  
 
-**Exemple :**
-![alt text](image-7.png)
+**Exemple :**  
+![alt text](image-7.png)  
 Voici la même table de substition que la `s_box` mais plus facilement lisible par un humain. C'est un tableau à 2 entrée qui permet de de faire coresspondre un octet à un autre. Par exemple si on a l'octet sous format hexadécimal : `A0` en entrée la sortie sera `E0`.
 
 - Dans mon code j'ai ajouté la fonction `fromLetterToDec` qui permet de transformer les caractère hexadécimaux en format décimal -> donc `A` sera transformé en `10` par exemple.  
