@@ -139,8 +139,9 @@ Fonction réalisant le multiplication des termes :
 
 4. La partie suivante convertit chaque élément de la matrice `output` en une représentation hexadécimale de deux caractères (`output_hex`). Cela est fait pour des raisons de présentation ou d'affichage.
 
+# Difficulté et conclusion  
 
-
+Je n'ai pas réussi à finir ce sujet comme c'était demandé, il fallait une étape de plus l'AddRoundKey afin faire l'ensemble du processus 10 fois pour finir le crytage. Même si j'ai compris le fonctionnement de ce système de chiffrement symétrique, mon faible niveau en Python ne m'a pas permis d'implémenter ceci, et ne voulant pas utiliser du code tout fait sur internet ou avec l'aide d'une IA, j'ai décidé de rendre ce travail qui représente ce que je sais faire actuellement. J'ai l'envie de reprendre ce sujet lorsque j'aurais le temps afin de réussir à faire fonctionner le cryptage ainsi que le décryptage. Ce TD reste cependant intéressant car j'ai pu manipuler cette méthode afin de comprendre au mieux son fonctionnemement, même si je n'ai pas réussi à l'implémenter.
 
 # Affichage résultat
 ![alt text](image-8.png)
